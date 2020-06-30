@@ -45,6 +45,13 @@ app.get('/books', (req, res) => {
     // .json(books);
 });
 
-app.listen(8000, () => {
-  console.log('Express Server running on PORT 8000...')
-});
+module.exports = app;
+
+// to prepare the app for testing, need to
+// seperate the server controller code 
+// from the application code (everything else)
+// by placing the app.listen controller code in a seperate file (server.js)
+//
+// app.listen(8000, () => {
+//   console.log('Server listening on PORT 8000...')
+// })
