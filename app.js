@@ -4,7 +4,7 @@ const cors = require('cors'); // SCHWEET!!
 
 const app = express();
 
-app.use(morgan('common'));
+app.use(morgan('dev')); // tutorial suggests 'common' format
 app.use(cors());
 
 const books = require('./books-data.js')
@@ -37,6 +37,7 @@ app.get('/books', (req, res) => {
   if (sort) {
     results.sort((a, b) => {
       return a[sort] > b[sort] ? 1 : a[sort] < b[sort] ? -1 : 0;
+      // return a[sort] > b[sort] ? -1 : a[sort] < b[sort] ? 1 : 0; // reversed
     }); 
   }
 
