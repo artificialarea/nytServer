@@ -1,6 +1,6 @@
 const express = require('express');
 const morgan = require('morgan');
-const cors = require('cors'); // SCHWEET!!
+const cors = require('cors'); // SCHWEET!! to allow communication with nytClient
 
 const app = express();
 

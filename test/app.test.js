@@ -44,7 +44,6 @@ describe('GET /books', () => {
         // iterate one less than the length of the array
         // because we're comparing 2 items in the array at once
         while (i < res.body.length - 1) {
-
           // compare book at 'i' with next book at 'i + 1'
           const bookAtI = res.body[i];
           const bookAtIPlus = res.body[i + 1];
@@ -55,6 +54,11 @@ describe('GET /books', () => {
           }
           i++;
         }
+        // ^^^^ alternate way to write above while statement
+        // while(sorted && i < res.body.length - 1) {
+        //   sorted = sorted && res.body[i].title < res.body[i + 1].title
+        //   i++
+        // }
         expect(sorted).to.be.true;
       });
   });
@@ -88,4 +92,5 @@ describe('GET /books', () => {
         expect(sorted).to.be.true;
       });
   });
+
 });
